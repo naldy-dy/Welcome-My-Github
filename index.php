@@ -1,6 +1,8 @@
 <?php 
 
-// penamaan kelas PHP
+
+// class-1
+	// penamaan kelas PHP
 	class Hp{
 
 		// nama atribut
@@ -11,11 +13,21 @@
 		$ram,
 		$harga;
 
+		// fungtion-1
 		public function cetakdisplay(){
 			return $this->display;
 		}
+
+		// fungtion-2
 		function tampilharga(){
 			return $this->harga;
+		}
+	}
+
+// class-2
+	class Mobil extends Hp{
+		function selfParking(){
+			echo "Parkir sendiri";
 		}
 	}
 
@@ -37,24 +49,16 @@
 	$produk2->ram = "4gb";
 	$produk2->harga = number_format(16000000) ;
 
+
+	$tesla = new mobil;
+	$tesla->merk = "tesla";
+	$tesla->type = "Model X";
+	$tesla->mesin = "2000cc";
+	$tesla->max_speed = "280km/h";
+
 // menampilkan isi data yang dipilih di web bros
 
-	echo "Yang ditampilkan ".$produk->cetakdisplay();
-	echo "<br>";
-	echo "Harga yang ditampilkan " .$produk->tampilharga();
-	echo "<br>";
-	echo "<br>";
-	echo "<br>";
-	echo "$produk->merk";
-	echo "<br>";
-	echo "$produk2->merk";
-	echo "<br>";
-
-	if($produk2 === $produk){
-		echo "Produk Sama";
-	}else{
-		echo "Produk Tidak Sama";
-	}
+$tesla->selfParking();
 
 
 
